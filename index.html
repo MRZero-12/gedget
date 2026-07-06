@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GadgetZone — Temukan Gadget Impianmu</title>
+  <meta name="description" content="Toko gadget terlengkap dengan harga terbaik. Smartphone, laptop, audio, wearable, dan gaming gear.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+  <!-- Background Ambience -->
+  <div class="bg-ambience" aria-hidden="true">
+    <div class="bg-blob bg-blob--1"></div>
+    <div class="bg-blob bg-blob--2"></div>
+    <div class="bg-blob bg-blob--3"></div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+        GadgetZone
+      </a>
+      <div class="navbar-links" id="navLinks">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="index.html?category=smartphones" class="nav-link">Smartphones</a>
+        <a href="index.html?category=laptops" class="nav-link">Laptops</a>
+        <a href="index.html?category=audio" class="nav-link">Audio</a>
+        <a href="index.html?category=wearables" class="nav-link">Wearables</a>
+        <a href="index.html?category=gaming" class="nav-link">Gaming</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="cart.html" class="cart-icon" id="cartIcon" aria-label="Keranjang belanja">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+
+      <!-- Hero Banner -->
+      <section class="hero">
+        <h1>Temukan Gadget Impianmu</h1>
+        <p>Teknologi terbaru dengan harga terbaik. Dari smartphone flagship hingga gaming gear profesional.</p>
+        <div class="hero-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="heroSearch" placeholder="Cari produk, kategori, atau fitur..." autocomplete="off">
+        </div>
+      </section>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <span class="filter-label">Kategori</span>
+        <div class="filter-chips" id="filterChips">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="filter-sort">
+          <select id="sortSelect" aria-label="Urutkan produk">
+            <option value="newest">Terbaru</option>
+            <option value="price-low">Harga Terendah</option>
+            <option value="price-high">Harga Tertinggi</option>
+            <option value="rating">Rating Tertinggi</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Count -->
+      <div class="product-count" id="productCount"></div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-bolt"></i> GadgetZone</h3>
+        <p>Toko gadget terlengkap dengan harga terbaik dan garansi resmi. Temukan teknologi terbaru yang sesuai dengan kebutuhanmu.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kategori</h4>
+        <a href="index.html?category=smartphones">Smartphones</a>
+        <a href="index.html?category=laptops">Laptops</a>
+        <a href="index.html?category=audio">Audio</a>
+        <a href="index.html?category=wearables">Wearables</a>
+        <a href="index.html?category=gaming">Gaming</a>
+      </div>
+      <div class="footer-col">
+        <h4>Bantuan</h4>
+        <a href="faq.html">FAQ</a>
+        <a href="#">Pengiriman</a>
+        <a href="#">Pengembalian</a>
+        <a href="#">Kontak Kami</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 GadgetZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/products.js"></script>
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const scrollTop = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      if (window.scrollY > 400) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+    scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) toggleMenu();
+      });
+    });
+  </script>
+</body>
+</html>

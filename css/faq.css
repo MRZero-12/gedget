@@ -1,0 +1,112 @@
+.faq-hero {
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+/* TITLE COLOR */
+.faq-hero h1 {
+  color: var(--accent);
+}
+
+/* GRID 2 KOLOM */
+.faq-wrapper {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* CARD */
+.faq-item {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* QUESTION */
+.faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question i {
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+/* ANSWER (FIX STABLE ACCORDION) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  padding-bottom: 18px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ACTIVE STATE */
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding-bottom: 18px;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .faq-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* NAVBAR KHUSUS FAQ (CENTER ONLY) */
+.faq-page .navbar-container {
+  justify-content: center;
+  position: relative;
+}
+
+.faq-page .navbar-logo {
+  position: absolute;
+  left: 24px;
+}
+
+.faq-page .navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
